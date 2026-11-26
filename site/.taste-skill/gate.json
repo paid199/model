@@ -13,6 +13,14 @@
    "round": 0,
    "reused": false,
    "stopHookActive": false
+  },
+  {
+   "at": "2026-11-26T00:40:00.410Z",
+   "mode": "hook",
+   "host": "claude",
+   "decision": "allow",
+   "reason": "no build is active here",
+   "stopHookActive": false
   }
  ],
  "max": 3,
