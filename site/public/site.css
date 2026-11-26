@@ -1,0 +1,108 @@
+/* Page CSS: only what sits inside a visual and the kit lacks (references/system.md). */
+
+/* HERO collage pieces: sized in % of the collage, text in container units */
+.ly-collage { container-type: inline-size; }
+.ly-collage .ly-piece { box-shadow: 0 1px 2px rgb(0 0 0 / .3), 0 22px 48px -22px rgb(0 0 0 / .7); border: 1px solid rgb(239 240 241 / .1); }
+.ly-collage .ly-piece code { font: 400 max(13px, 2.5cqw)/1.55 var(--font-mono); white-space: pre-wrap; overflow-wrap: anywhere; display: block; color: #d6d8db; }
+.pc-k { color: #ff8a6b; } .pc-s { color: #9fd3a8; }
+.ly-collage .pc-sql { background: #101113; padding: 3cqw 3.4cqw; display: grid; align-content: start; gap: 1.6cqw; }
+.pc-file, .pc-label { font: 500 max(13px, 2.1cqw)/1.3 var(--font-text); color: #9c9ea3; }
+.pc-sql--ok { border-color: rgb(120 200 140 / .35) !important; }
+.ly-collage .pc-warn { background: #eff0f1; color: #18191b; padding: 4cqw; display: grid; align-content: start; gap: 2cqw; font: 400 max(13px, 2.4cqw)/1.35 var(--font-text); }
+.pc-warn strong { font: 500 max(16px, 4.2cqw)/1.12 var(--font-display); letter-spacing: -0.01em; margin-bottom: 1cqw; max-width: 22ch; }
+.pc-tag { display: inline-flex; align-items: center; gap: 1cqw; justify-self: start; padding: .6cqw 1.6cqw; border-radius: 99px; background: #ffe3da; color: #b3300f; font: 500 max(13px, 1.8cqw)/1.2 var(--font-text); }
+.pc-tag i { width: 1.4cqw; height: 1.4cqw; border-radius: 50%; background: #ff4a1f; }
+.pc-row { display: flex; justify-content: space-between; gap: 2cqw; padding-top: 1.4cqw; border-top: 1px solid rgb(127 127 127 / .22); }
+.pc-row b { font-weight: 500; font-family: var(--font-mono); }
+.pc-warn .pc-row { padding-right: 9cqw; } /* the pause disc sits on this piece's lower-right corner */
+.ly-collage .pc-chip, .ly-collage .pc-check { background: #222427; color: #eff0f1; padding: 2.4cqw 3cqw; display: flex; align-items: center; gap: 1.6cqw; font: 500 max(13px, 2.4cqw)/1.3 var(--font-text); }
+.pc-x, .pc-ok { flex: none; width: 2.6cqw; height: 2.6cqw; min-width: 12px; min-height: 12px; border-radius: 50%; background: #ff4a1f; }
+.pc-ok { background: #3fb35f; }
+.pc-check b { font-weight: 500; }
+.ly-collage .pc-sizes, .ly-collage .pc-plan { background: #222427; color: #eff0f1; padding: 3.6cqw; display: grid; align-content: start; gap: 2cqw; font: 400 max(13px, 2.4cqw)/1.35 var(--font-text); }
+.pc-sizes .pc-row, .pc-plan .pc-row { border-top-color: rgb(239 240 241 / .12); }
+.pc-sizes { padding-right: 9cqw !important; }
+@media (max-width: 639px) { .pc-row:nth-of-type(n+5) { display: none; } }
+
+/* REVIEW app-frame (sections-library.md, app-frame: the whole recipe) */
+.app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+.app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+.app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+.app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+.app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+.app .ui-brand { width: 14px; height: 14px; }
+@media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+@media (max-width: 1023px) {
+  .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .app > .app__pane--list { max-height: 252px; }
+  .app > .app__pane--list::after { display: none; }
+  .app .ui-win__side { display: none; }
+  .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
+  .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+}
+@media (max-width: 639px) {
+  .app.ui { grid-template-rows: minmax(0, 1fr); }
+  .app > .app__pane--list { display: none; }
+  .app > .app__pane + .app__pane { border-top: 0; }
+}
+
+/* HOW: the drawn step visuals inside the pinned-chapters frame */
+.pcv { aspect-ratio: 4 / 3; background: #101113; color: #eff0f1; padding: 40px; display: grid; align-content: center; gap: 18px; font: 400 16px/1.45 var(--font-text); }
+.pcv__head { font: 500 13px/1.3 var(--font-text); color: #9c9ea3; margin-bottom: 8px; }
+.pcv code { font: 400 15px/1.55 var(--font-mono); color: #c9cbce; padding: 12px 14px; border: 1px solid rgb(239 240 241 / .1); border-radius: var(--r-sm); overflow-wrap: anywhere; }
+.pcv code.is-hot { border-color: #ff4a1f; color: #eff0f1; }
+.pcv__bar { display: grid; grid-template-columns: 110px 1fr 84px; align-items: center; gap: 14px; }
+.pcv__bar i { height: 14px; border-radius: 99px; background: #4a4d52; width: var(--w); min-width: 4px; }
+.pcv__bar.is-hot i { background: #ff4a1f; }
+.pcv__bar b { font: 500 14px/1 var(--font-mono); text-align: right; }
+.pcv__check { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid rgb(239 240 241 / .1); border-radius: var(--r-sm); }
+.pcv__check b { font-weight: 500; min-width: 64px; }
+.pcv__note { color: #9c9ea3; font-size: 14px; margin-top: 6px; }
+.pcv .pc-x, .pcv .pc-ok { width: 12px; height: 12px; }
+@media (max-width: 639px) { .pcv { padding: 20px; gap: 10px; } .pcv__bar { grid-template-columns: 84px 1fr 64px; gap: 10px; } }
+
+/* RULES: three short facts as plain lines */
+.plain-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+.plain-facts li { padding-top: var(--s-2); border-top: 1px solid var(--line, rgb(127 127 127 / .2)); }
+
+/* FRAMEWORKS: the diagram frame on the inverse band */
+.frame--diagram { margin-top: var(--s-7); display: grid; }
+.frame--diagram > .dg { width: 100%; height: 100%; }
+
+/* PRICING: the real marks of what each plan connects to */
+.plan-icons { display: flex; gap: var(--s-3); align-items: center; }
+.plan-icons img { width: 24px; height: 24px; object-fit: contain; }
+.plan-icons img { box-sizing: content-box; padding: 6px; background: #eff0f1; border-radius: var(--r-sm); } /* black marks keep their colour on a light tile */
+
+/* QUESTIONS: the role Alterly asks for, under the head column */
+.pcv--role { aspect-ratio: auto; margin-top: var(--s-6); }
+.pcv--role code { white-space: pre-wrap; }
+
+/* Section screens below the desktop (layout-v4.md, the tablet table): stacked content needs two screens */
+@media (min-width: 640px) and (max-width: 1023px) { #pricing, #faq { --h: 2 } }
+@media (max-width: 639px) { #pricing, #faq { --hm: 2 } .ly-collage .pc-chip { display: none; } }
+/* 1024 to 1279: one screen holds 576px, so the plans drop their who-for line and the questions their last */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #pricing .card--plan > p.muted, #pricing .card--plan li:nth-child(4) { display: none; }
+  #faq .faq__item:nth-child(5) { display: none; }
+  #faq .pcv--role .pcv__check:last-child { display: none; }
+}
+.pc-fix { margin-top: 1cqw; padding: 1.6cqw 2cqw; border-radius: var(--r-sm); background: #18191b; color: #eff0f1; font: 500 max(13px, 2.2cqw)/1.3 var(--font-text); margin-right: 9cqw; }
+@media (max-width: 639px) { .pc-fix { display: none; } }
+
+/* HOW at rest on a phone: shorter drawn visuals; the section holds its two screens */
+@media (max-width: 639px) {
+  [data-moment="pinned-chapters"]:not(.is-live) .pcv { aspect-ratio: auto; }
+}
+/* tablets held upright and tall: the questions fit one screen with four of them */
+@media (min-width: 640px) and (max-width: 1023px) and (min-height: 1100px) {
+  #faq { --h: 1 } #faq .faq__item:nth-child(5) { display: none; }
+}
+
+.plan-badge { align-self: flex-start; }
+.card--plan .price .t-stat { font: var(--display-weight) var(--t-stat)/1.1 var(--font-display); letter-spacing: var(--display-tracking); }
+/* HOW at rest on a phone: the three steps fill the section's two screens (no neighbour in its tiles) */
+@media (max-width: 639px) {
+  [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__step:nth-child(n+2) .pcv { min-height: 313px; }
+  main > #how[data-moment]:not(.is-live) { min-height: calc(2 * 100lvh); }
+}

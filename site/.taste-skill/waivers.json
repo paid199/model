@@ -1,0 +1,4 @@
+[
+ { "check": "button-styles", "target": "span-3.start-10", "reason": "the triptych hero recipe (heroes.json, layout.css section 9) sets its one button 64px tall; every other primary is the 44px system button" },
+ { "check": "section-gaps", "target": "section#faq / footer#contact", "reason": "at 390 the questions hold exactly two phone screens (layout-v4.md, --hm: 2) so no tile shows the footer; the gap is the rest of the second screen" }
+]
