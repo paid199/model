@@ -7,3 +7,5 @@ next-env.d.ts
 .taste-skill/gate
 .taste-skill/*.txt
 *.tsbuildinfo
+.taste-skill/orig
+.taste-skill/found-*.json
