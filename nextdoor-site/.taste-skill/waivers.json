@@ -1,0 +1,12 @@
+[
+ {
+  "check": "section-gaps",
+  "target": "section.hero.hero--photo / section#services",
+  "reason": "at 390 the services, steps and quote sections each hold exactly two phone screens (--hm: 2) so no tile shows a neighbour; their slack raises the median gap, the hero to services gap is the system's own padding"
+ },
+ {
+  "check": "scroll-reveal",
+  "target": "footer__col:nth-of-type(4) > ul > li:nth-of-type(1)",
+  "reason": "the kit's own phone action bar (system.js actionbar) observes every link to #quote so the bar steps away while one is on screen; the link itself never fades, rises or unmasks"
+ }
+]

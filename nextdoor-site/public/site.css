@@ -1,0 +1,26 @@
+/* Page CSS: only what the kit lacks (references/system.md). */
+
+/* QUOTE: the form on --g-alt with 48px padding (sections-library.md, booking-form); three plain facts beside it */
+.quote-form { background: var(--g-alt, var(--surface)); padding: var(--s-7); border-radius: var(--r-lg); display: grid; gap: var(--s-4); }
+#quote.ground-surface .quote-form { background: var(--p-bg); }
+.plain-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+.plain-facts li { padding-top: var(--s-2); border-top: 1px solid var(--line); }
+@media (max-width: 639px) { .quote-form { padding: var(--s-5); } }
+
+/* FOOTER: the name set large in the display face (footer-dark) */
+.footer__name { font-size: clamp(30px, 2.4vw + 12px, 48px); letter-spacing: var(--display-tracking); }
+.quote-photo { aspect-ratio: 3 / 2; margin-top: var(--s-2); }
+/* a phone: the services photograph keeps a fixed height so the section holds one screen */
+@media (max-width: 639px) { #services { --hm: 2 } #services .frame--fill { flex: none; height: auto; aspect-ratio: 4 / 5; } }
+/* 1024 to 1279: one screen holds 576px, so the quote photograph takes a wider crop */
+@media (min-width: 1024px) and (max-width: 1279px) { .quote-photo { aspect-ratio: 2 / 1; } }
+/* a phone: the quote form and the three steps each hold two screens */
+@media (max-width: 639px) {
+  #quote { --hm: 2 }
+  main > #process[data-moment]:not(.is-live) { min-height: calc(2 * 100lvh); }
+  [data-moment="pinned-chapters"]:not(.is-live) .mo-pc__visual > img { aspect-ratio: 4 / 3; max-height: none; }
+}
+.quote-form .field { align-content: start; }
+.quote-form .field:has(textarea), .quote-form .btn-row, .quote-form .form__status { grid-column: 1 / -1; }
+.quote-form .field textarea { min-height: 96px; }
+#quote .plain-facts { margin-top: var(--s-2); }

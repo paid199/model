@@ -1,0 +1,20 @@
+{
+  "palettes": [
+    "white-signal-red"
+  ],
+  "types": [
+    "hanken"
+  ],
+  "dealt": [
+    "hanken",
+    "instrument-serif",
+    "figtree"
+  ],
+  "moments": [
+    {
+      "id": "pinned-chapters",
+      "at": "2026-11-26T02:16:17.302Z",
+      "seed": "42e8c034"
+    }
+  ]
+}
